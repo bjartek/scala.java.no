@@ -8,7 +8,7 @@
   <name>scalaweb</name>
   <inceptionYear>2007</inceptionYear>
   <properties>
-    <scala.version>2.7.1</scala.version>
+    <scala.version>2.7.3</scala.version>
   </properties>
 
   <repositories>
@@ -42,7 +42,7 @@
     <dependency>
       <groupId>net.liftweb</groupId>
       <artifactId>lift-core</artifactId>
-      <version>0.10-SNAPSHOT</version>
+      <version>0.10</version>
     </dependency>
     <dependency>
       <groupId>org.apache.derby</groupId>
