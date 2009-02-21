@@ -5,8 +5,9 @@
   <artifactId>scalaweb</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>scalaweb</name>
-  <inceptionYear>2007</inceptionYear>
+  <name>scalabinweb</name>
+  <inceptionYear>2008</inceptionYear>
+
   <properties>
     <scala.version>2.7.3</scala.version>
   </properties>
@@ -139,6 +140,7 @@
       </plugin>
     </plugins>
   </build>
+
   <reporting>
     <plugins>
       <plugin>
@@ -150,4 +152,18 @@
       </plugin>
     </plugins>
   </reporting>
+
+	<profiles>
+    <profile>
+      <id>pkg</id>
+      <activation>
+        <os>
+          <name>sunos</name>
+        </os>
+      </activation>
+      <modules>
+        <module>scalabin-pkg</module>
+      </modules>
+    </profile>
+  </profiles>
 </project>
