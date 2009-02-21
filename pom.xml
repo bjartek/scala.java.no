@@ -1,15 +1,17 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>no.java.scalaweb</groupId>
-  <artifactId>scalaweb</artifactId>
+  <groupId>no.java.scala.portal</groupId>
+  <artifactId>scalabin-portal</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <name>scalabinweb</name>
+  <packaging>pom</packaging>
+  <name>scalabin-portal</name>
   <inceptionYear>2008</inceptionYear>
 
   <properties>
     <scala.version>2.7.3</scala.version>
+    <scala-plugin.version>2.8</scala-plugin.version>
+    <jetty.version>6.1.14</jetty.version>
   </properties>
 
   <repositories>
@@ -23,6 +25,16 @@
       <name>Scala-Tools Maven2 Repository for Snapshots</name>
       <url>http://scala-tools.org/repo-snapshots</url>
       <snapshots/>
+    </repository>
+    <repository>
+      <id>javabin.repo</id>
+      <name>javaBin Smia</name>
+      <url>http://smia.java.no/maven/repo/release</url>
+    </repository>
+    <repository>
+      <id>javabin.repo.snapshot</id>
+      <name>javaBin Smia snapshot</name>
+      <url>http://smia.java.no/maven/repo/snapshot</url>
     </repository>
   </repositories>
 
@@ -62,12 +74,12 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.mortbay.jetty</groupId>
-      <artifactId>jetty</artifactId>
-      <version>[6.1.6,)</version>
-      <scope>test</scope>
-    </dependency>
+      <dependency>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>jetty</artifactId>
+        <version>${jetty.version}</version>
+        <scope>provided</scope>
+      </dependency>
     <!-- for LiftConsole -->
     <dependency>
       <groupId>org.scala-lang</groupId>
@@ -78,12 +90,11 @@
   </dependencies>
 
   <build>
-    <sourceDirectory>src/main/scala</sourceDirectory>
-    <testSourceDirectory>src/test/scala</testSourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.scala-tools</groupId>
         <artifactId>maven-scala-plugin</artifactId>
+        <version>${scala-plugin.version}</version>
         <executions>
           <execution>
             <goals>
@@ -141,15 +152,17 @@
     </plugins>
   </build>
 
+	<modules>
+		<module>portal-web</module>
+	</modules>
+
   <reporting>
     <plugins>
       <plugin>
         <groupId>org.scala-tools</groupId>
         <artifactId>maven-scala-plugin</artifactId>
-        <configuration>
-          <scalaVersion>${scala.version}</scalaVersion>
-        </configuration>
-      </plugin>
+        <version>${scala-plugin.version}</version>
+			</plugin>
     </plugins>
   </reporting>
 
