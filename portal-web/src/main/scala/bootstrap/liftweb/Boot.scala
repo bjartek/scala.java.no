@@ -15,7 +15,6 @@ class Boot {
   def boot {
 
     LiftRules.addToPackages("no.java.scalaweb")
-    Schemifier.schemify(true, Log.infoF _, User)
 
     val entries = Menu(Loc("Hjem", List("index"), "Hjem")) ::
     Menu(Loc("Prosjekter", List("projects"),"Prosjekter")) :: 
