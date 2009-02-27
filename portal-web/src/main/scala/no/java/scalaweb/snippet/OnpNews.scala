@@ -8,19 +8,18 @@ class OnpNews {
   def news = <span>Her vil det komme nyeter fra java.no</span>
 
   def newsFeed():Elem = {
-
-    val url = new URL("http://www4.java.no/web/modules/javabin/rest/category-get.jsp?category=1122")
-    val conn = url.openConnection
-    val articles = XML.load(conn.getInputStream)
-    articles
+    XML.load("http://www4.java.no/web/modules/javabin/rest/category-get.jsp?category=1122")
    }
 
-  def show = {
+ def show = {
     <div> {
     for(article <- articles) yield {
+      <div class="article">
       <h3> { article.title} </h3>
       <p class="author"> { "Skrevet av: " + article.author } </p>
-      <div class="newsBody">{ Unparsed(article.body) } </div>
+      { article.getSource() }
+      { Unparsed(article.body) }
+      </div>
     }
     }</div>
    }
@@ -33,6 +32,9 @@ class OnpNews {
           case "tittel" => art.title = field.text
           case "brødtekst" => art.body = field.text
           case "forfatter" => art.author = field.text
+          case "url" => art.url = field.text
+          case "ingress" => art.shortdesc = field.text
+          case "kilde" => art.source = field.text
           case _ => 
         }
       }
@@ -45,5 +47,17 @@ class Article {
   var author:String = _
   var title:String =_
   var body:String = _
+  var url:String = ""
+  var shortdesc:String = _
+  var source:String = _
+
+  def getSource() = {
+    if(url == "") {
+      <p />
+    }else {
+      <p> { "Kilde: " } <a href={ url }>{ source }</a></p>
+    }
+  }
+
 }
 
