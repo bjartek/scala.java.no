@@ -7,7 +7,7 @@ class PlanetScala {
 
   def feed():Elem = {
 
-    val url = new URL("http://www.drmaciver.com/planetscala/atom.xml")
+    val url = new URL("http://www.planetscala.com/atom.xml")
     val conn = url.openConnection
     val atom = XML.load(conn.getInputStream)
     atom
