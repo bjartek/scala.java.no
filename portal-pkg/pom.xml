@@ -4,11 +4,11 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-  	<groupId>no.java.scala.portal</groupId>
-  	<artifactId>scalabin-portal</artifactId>
-  	<version>1.0-SNAPSHOT</version>
-	</parent>
+  <parent>
+    <groupId>no.java.scala.portal</groupId>
+    <artifactId>scalabin-portal</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
 
   <artifactId>portal-pkg</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -17,8 +17,8 @@
 
   <dependencies>
     <dependency>
-		 	<groupId>no.java.scala.portal</groupId>
-  		<artifactId>portal-web</artifactId>
+      <groupId>no.java.scala.portal</groupId>
+      <artifactId>portal-web</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>war</type>
     </dependency>
