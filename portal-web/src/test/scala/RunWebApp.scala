@@ -3,7 +3,7 @@ import _root_.org.mortbay.jetty.Server;
 import _root_.org.mortbay.jetty.webapp.WebAppContext;
 
 object RunWebApp extends Application {
-  val server = new Server(8080);
+  val server = new Server(8095);
   val context = new WebAppContext()
   context.setServer(server)
   context.setContextPath("/")

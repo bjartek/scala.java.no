@@ -31,6 +31,4 @@ class Boot {
   private def makeUtf8(req: HttpServletRequest) {
     req.setCharacterEncoding("UTF-8")
   }
-
 }
-
