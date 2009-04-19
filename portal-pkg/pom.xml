@@ -59,7 +59,8 @@
           </assembly>
           <packages>
             <package>
-              <name>JBscalabin</name>
+              <packageName>JBscalabin</packageName>
+              <name>ScalaBin</name>
             </package>
           </packages>
         </configuration>
