@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>no.java.scala.portal</groupId>
   <artifactId>scalabin-portal</artifactId>
@@ -15,17 +16,6 @@
 
   <repositories>
     <repository>
-      <id>scala-tools.org</id>
-      <name>Scala-Tools Maven2 Repository</name>
-      <url>http://scala-tools.org/repo-releases</url>
-    </repository>
-    <repository>
-      <id>scala-tools.org.snapshots</id>
-      <name>Scala-Tools Maven2 Repository for Snapshots</name>
-      <url>http://scala-tools.org/repo-snapshots</url>
-      <snapshots/>
-    </repository>
-    <repository>
       <id>javabin.repo</id>
       <name>javaBin Smia</name>
       <url>http://smia.java.no/maven/repo/release</url>
@@ -36,14 +26,6 @@
       <url>http://smia.java.no/maven/repo/snapshot</url>
     </repository>
   </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>scala-tools.org</id>
-      <name>Scala-Tools Maven2 Repository</name>
-      <url>http://scala-tools.org/repo-releases</url>
-    </pluginRepository>
-  </pluginRepositories>
 
   <dependencies>
     <dependency>
@@ -73,12 +55,12 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-      <dependency>
-        <groupId>org.mortbay.jetty</groupId>
-        <artifactId>jetty</artifactId>
-        <version>${jetty.version}</version>
-        <scope>provided</scope>
-      </dependency>
+    <dependency>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>jetty</artifactId>
+      <version>${jetty.version}</version>
+      <scope>provided</scope>
+    </dependency>
     <!-- for LiftConsole -->
     <dependency>
       <groupId>org.scala-lang</groupId>
@@ -157,9 +139,9 @@
     </plugins>
   </build>
 
-	<modules>
-		<module>portal-web</module>
-	</modules>
+  <modules>
+    <module>portal-web</module>
+  </modules>
 
   <reporting>
     <plugins>
@@ -167,11 +149,11 @@
         <groupId>org.scala-tools</groupId>
         <artifactId>maven-scala-plugin</artifactId>
         <version>${scala-plugin.version}</version>
-			</plugin>
+      </plugin>
     </plugins>
   </reporting>
 
-	<profiles>
+  <profiles>
     <profile>
       <id>pkg</id>
       <activation>

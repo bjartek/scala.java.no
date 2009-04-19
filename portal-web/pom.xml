@@ -7,9 +7,10 @@
     <artifactId>scalabin-portal</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>portal-web</artifactId>
+  <artifactId>scalabin-portal-web</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
+  <name>ScalaBin :: Web</name>
 
   <dependencies>
     <dependency>
