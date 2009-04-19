@@ -57,6 +57,12 @@
               </paths>
             </mkdirs>
           </assembly>
+          <packages>
+            <package>
+              <packageName>JBscalabin</packageName>
+              <name>ScalaBin</name>
+            </package>
+          </packages>
         </configuration>
       </plugin>
     </plugins>
