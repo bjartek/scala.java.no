@@ -7,7 +7,7 @@ class OnpNews {
   def news = <span>Her vil det komme nyeter fra java.no</span>
 
   def newsFeed(): Elem = {
-    XML.load(Configuration.javaBinNews)
+    XML.load(Configuration.javaBinCategoryGet + "?category=1122")
   }
 
   def show = {

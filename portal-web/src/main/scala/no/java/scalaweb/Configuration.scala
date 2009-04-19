@@ -7,7 +7,7 @@ object Configuration {
   val configFile = new File("/opt/jb/scalabin/etc/config.properties");
   val config = new Properties
 
-  config.setProperty("javaBinNews", "http://www4.java.no/web/modules/javabin/rest/category-get.jsp?category=1122")
+  config.setProperty("javaBinCategoryGet", "http://www4.java.no/web/modules/javabin/rest/category-get.jsp")
   config.setProperty("planetScalaFeed", "http://www.planetscala.com/atom.xml")
   if (configFile.canRead) {
     var is: FileInputStream = null
@@ -23,9 +23,9 @@ object Configuration {
     }
   }
 
-  var javaBinNews = config.getProperty("javaBinNews")
+  var javaBinCategoryGet = config.getProperty("javaBinCategoryGet")
   var planetScalaFeed = config.getProperty("planetScalaFeed")
 
-  println("javaBinNews: " + javaBinNews)
+  println("javaBinCategoryGet: " + javaBinCategoryGet)
   println("planetScalaFeed: " + planetScalaFeed)
 }
