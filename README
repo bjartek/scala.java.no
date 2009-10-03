@@ -1,3 +1,7 @@
 Website for scalaBin at scala.java.no. 
 
 Bin stands for "Usergroup in Norway"
+
+in order to test it out run
+
+mvn jetty:run -DtemplateDir=<path_to_checkout>/template/
