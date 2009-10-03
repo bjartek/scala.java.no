@@ -9,6 +9,7 @@ object Configuration {
 
   config.setProperty("planetScalaFeed", "http://www.planetscala.com/atom.xml")
   config.setProperty("htmlFileDir", "/Users/bjartek/scalabin/")
+
   if (configFile.canRead) {
     var is: FileInputStream = null
 
@@ -23,7 +24,15 @@ object Configuration {
     }
   }
 
-  var planetScalaFeed = config.getProperty("planetScalaFeed")
-  var htmlFileDir = config.getProperty("htmlFileDir")
+  val templateDir = System.getProperty("templateDir");
+  if(templateDir != null) {
+    val f = new File(templateDir) 
+    if(f.isDirectory && f.canRead) {
+      config.setProperty("htmlFileDir", templateDir);
+    }
+  }
+
+  val planetScalaFeed = config.getProperty("planetScalaFeed")
+  val htmlFileDir = config.getProperty("htmlFileDir")
 
 }
