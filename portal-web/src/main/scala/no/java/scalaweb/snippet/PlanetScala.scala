@@ -13,10 +13,12 @@ class PlanetScala {
   }
 
   def show() =
-    for (entry <- feed \ "entry";
-         title <- entry \ "title";
-         if title.text != "";
-         link <- entry \ "link") yield
+    for {
+         entry <- feed \ "entry"
+         title <- entry \ "title"
+         if title.text != ""
+         link <- (entry \ "link")(0)
+       } yield
       <li> <a href={link.attribute("href").get.text}>{title.text}</a> </li>
 
   def list(): Elem = {
